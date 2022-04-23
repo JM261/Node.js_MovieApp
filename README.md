@@ -1,4 +1,4 @@
-# this is Node.js Practice (MovieApp)
+# this is Node.js Practice Project (MovieApp)
 
 Used Node.js / React / MongoDB / etc...
 
