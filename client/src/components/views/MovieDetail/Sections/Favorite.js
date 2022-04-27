@@ -6,9 +6,9 @@ function Favorite(props) {
 
     const movieId = props.movieId
     const userFrom = props.userFrom
-    const movieTitle = props.movieTitle
-    const moviePost = props.backdrop_path
-    const movieRunTime = props.runtime
+    const movieTitle = props.movieInfo.title
+    const moviePost = props.movieInfo.backdrop_path
+    const movieRunTime = props.movieInfo.runtime
 
     const [FavoriteNumber, setFavoriteNumber] = useState(0)
     const [Favorited, setFavorited] = useState(false)
@@ -22,8 +22,10 @@ function Favorite(props) {
 
     useEffect(() => {
 
+
         Axios.post('/api/favorite/favoriteNumber', variables)
             .then(response => {
+                // console.log(response.data)
                 setFavoriteNumber(response.data.favoriteNumber)
                 if (response.data.success) {
 

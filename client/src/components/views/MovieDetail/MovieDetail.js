@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { API_URL, API_KEY, IMAGE_BASE_URL } from '../../Config';
 import MainImage from '../LandingPage/Sections/MainImage';
-import Movieinfo from './Sections/Movieinfo';
+import MovieInfo from './Sections/MovieInfo';
 import GridCards from '../commons/GridCards';
 import Favorite from './Sections/Favorite';
 import { Row } from 'antd';
@@ -9,6 +9,7 @@ import { Row } from 'antd';
 function MovieDetail(props) {
 
     let movieId = props.match.params.movieId
+    
     const [Movie, setMovie] = useState([])
     const [Casts, setCasts] = useState([])
     const [ActorToggle, setActorToggle] = useState(false)
@@ -22,6 +23,7 @@ function MovieDetail(props) {
         fetch(endpointInfo)
             .then(response => response.json())
             .then(response => {
+                console.log(response)
                 setMovie(response)
             })
 
@@ -53,12 +55,12 @@ function MovieDetail(props) {
         <div style={{ width: '85%', margin: '1rem auto' }}>
 
             <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
-                <Favorite  MovieInfo={Movie} MovieId={movieId}  userFrom={localStorage.getItem('userId')}  />
+                <Favorite  movieInfo={Movie} movieId={movieId}  userFrom={localStorage.getItem('userId')}  />
             </div>
 
 
             { /* Movie Info */ }
-            <Movieinfo
+            <MovieInfo
                 movie={Movie}
             />   
 

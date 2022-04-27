@@ -1,7 +1,7 @@
 import React from 'react'
 import { Descriptions, Badge } from 'antd'
 
-function Movieinfo(props) {
+function MovieInfo(props) {
 
     let { movie } = props;
 
@@ -23,4 +23,4 @@ function Movieinfo(props) {
     )
 }
 
-export default Movieinfo
+export default MovieInfo
