@@ -19,7 +19,7 @@ function FavoritePage() {
     Axios.post('/api/favorite/getFavoredMovie', { userFrom: localStorage.getItem('userId') })
         .then(response => {
             if (response.data.success) {
-                    console.log(response.data)
+                    // console.log(response.data)
                     setFavorites(response.data.favorites)
             } else {
                 alert('영화 정보를 가져오는데 실패했습니다.')
@@ -71,7 +71,7 @@ function FavoritePage() {
 
   return (
     <div style={{ width: '85%', margin: '3rem auto' }}>
-        <h2> Favorite Movies </h2>
+        <h2> My Favorite Movies </h2>
         <hr />
 
         <table>
